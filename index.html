@@ -2,479 +2,137 @@
 <html lang="ja">
 
 <head>
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>RESTAURANT</title>
+  <title>カラー選択プレビュー</title>
 
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="images/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  
 </head>
-
 
 <body>
 
+  <!-- カラー選択 -->
+  <section class="color-selector">
 
-  <!-- HEADER -->
+    <h1>サイトカラーを選択</h1>
 
-  <header>
+    <p>お好みの雰囲気を選んでください</p>
 
-    <div
-      class="logo"
-      data-site="restaurantName"
-    ></div>
+    <div class="color-buttons">
 
+      <button data-color="natural">
+        ナチュラル
+      </button>
 
-    <nav>
+      <button data-color="fresh">
+        爽やか
+      </button>
 
-      <a href="#about">
-        ABOUT
-      </a>
+      <button data-color="chic">
+        シック
+      </button>
 
-      <a href="menu.html">
-        MENU
-      </a>
-      
-      <a href="plan.html">
-        PLAN
-      </a>
-      
-      <a href="access.html">
-        ACCESS
-      </a>
+      <button data-color="japanese">
+        和モダン
+      </button>
 
-    </nav>
-<button
-  class="menu-toggle"
-  aria-label="メニューを開く"
->
+      <button data-color="warm">
+        あたたかみ
+      </button>
 
-  <span></span>
+      <button data-color="luxury">
+        高級感
+      </button>
 
-  <span></span>
-
-  <span></span>
-
-</button>
-
-    <a
-      href="#reservation"
-      class="reservation-button"
-    >
-      RESERVATION
-    </a>
-
-  </header>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-  <img
-  class="hero-image"
-  data-image="heroImage"
-  alt="RESTAURANT"
->
-
-  <div class="hero-overlay"></div>
-
-
-  <div class="hero-content">
-
-    <p>
-      WELCOME TO
-    </p>
-
-
-    <h1
-      data-site="restaurantName"
-    ></h1>
-
-
-    <p
-      class="hero-catch"
-      data-site="catchCopy"
-    ></p>
-
-
-    <a
-      href="#reservation"
-      class="hero-button"
-    >
-      RESERVATION
-    </a>
-
-  </div>
-
-</section>
-
-
-
-  <!-- ABOUT -->
-
-  <section
-    id="about"
-    class="about"
-  >
-
-    <p class="section-subtitle">
-      ABOUT
-    </p>
-
-
-    <h2
-      data-site="restaurantName"
-    ></h2>
-
-
-    <p
-      class="about-text"
-      data-site="aboutText"
-    ></p>
+    </div>
 
   </section>
 
 
+  <!-- サイトプレビュー -->
+  <main class="preview">
 
-  <!-- MENU -->
+    <header class="site-header">
+      <div class="site-logo">
+        YOUR SHOP
+      </div>
 
-  <section
-    id="menu"
-    class="menu-section"
-  >
-
-    <p class="section-subtitle">
-      MENU
-    </p>
-
-
-    <h2>
-      MENU
-    </h2>
-
-
-    <div class="menu-grid">
+      <nav>
+        <a href="#">HOME</a>
+        <a href="#">MENU</a>
+        <a href="#">ABOUT</a>
+        <a href="#">ACCESS</a>
+      </nav>
+    </header>
 
 
-      <div class="menu-card">
+    <section class="hero">
 
-        <img
-            class="menu-image"
-            data-image="menuImage01"
-            alt="MENU 01"
-          >
+      <div class="hero-content">
 
+        <p class="hero-subtitle">
+          WELCOME TO OUR WEBSITE
+        </p>
 
-        <h3
-          data-site="menuName01"
-        ></h3>
-        
-        <p
-          data-site="menuDescription01"
-        ></p>
-        
-        <span
-          data-site="menuPrice01"
-        ></span>
+        <h2>
+          YOUR SHOP
+        </h2>
 
-        <a href="menu.html#menu01" class="menu-more">
-          VIEW MENU
+        <p>
+          あなたのお店の魅力を伝える<br>
+          シンプルで美しいウェブサイト
+        </p>
+
+        <a href="#" class="button">
+          MENU
         </a>
 
       </div>
 
+    </section>
 
 
-      <div class="menu-card">
+    <section class="contents">
 
-      <img
-      class="menu-image"
-      data-image="menuImage02"
-      alt="MENU 02"
-    >
+      <h2>ABOUT</h2>
+
+      <p>
+        お店のこだわりや想いなどを<br>
+        ここに掲載できます。
+      </p>
 
 
-       <!-- MENU 02 -->
+      <div class="sample-cards">
 
-      <h3
-        data-site="menuName02"
-      ></h3>
-      
-      <p
-        data-site="menuDescription02"
-      ></p>
-      
-      <span
-        data-site="menuPrice02"
-      ></span>
+        <div class="card">
+          <h3>MENU</h3>
+          <p>おすすめメニュー</p>
+        </div>
 
-      <a href="menu.html#menu02" class="menu-more">
-        VIEW MENU
-      </a>
+        <div class="card">
+          <h3>CONCEPT</h3>
+          <p>お店のコンセプト</p>
+        </div>
+
+        <div class="card">
+          <h3>ACCESS</h3>
+          <p>店舗へのアクセス</p>
+        </div>
 
       </div>
 
+    </section>
 
 
-      <div class="menu-card">
+    <footer>
+      <p>YOUR SHOP</p>
+    </footer>
 
-<img
-  class="menu-image"
-  data-image="menuImage03"
-  alt="MENU 03"
->
+  </main>
 
-
-        <!-- MENU 03 -->
-
-        <h3
-          data-site="menuName03"
-        ></h3>
-        
-        <p
-          data-site="menuDescription03"
-        ></p>
-        
-        <span
-          data-site="menuPrice03"
-        ></span>
-        
-        <a href="menu.html#menu03" class="menu-more">
-          VIEW MENU
-        </a>
-        
-      </div>
-
-
-    </div>
-
-
-  </section>
-
-<!-- PLAN -->
-
-<section
-  id="plan"
-  class="plan-section"
->
-
-  <p class="section-subtitle">
-    PLAN
-  </p>
-
-
-  <h2>
-    PLAN
-  </h2>
-
-
-  <div class="plan-grid">
-
-
-    <div class="plan-card">
-
-      <img class="plan-image"
-          data-image="planImage01"
-          alt="PLAN 01">
-
-
-        <h3 data-site="planName01"></h3>
-        <p data-site="planDescription01"></p>
-        <span data-site="planPrice01"></span>
-
-<a href="plan.html#plan01" class="menu-more">
-  VIEW PLAN
-</a>
-    
-
-    </div>
-
-
-
-    <div class="plan-card">
-
-      <img class="plan-image"
-          data-image="planImage02"
-          alt="PLAN 02">
-          
-          <h3 data-site="planName02"></h3>
-          <p data-site="planDescription02"></p>
-          <span data-site="planPrice02"></span>
-
-<a href="plan.html#plan02" class="menu-more">
-  VIEW PLAN
-</a>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-  <!-- ACCESS -->
-
-  <section
-    id="access"
-    class="access"
-  >
-
-    <p class="section-subtitle">
-      ACCESS
-    </p>
-
-
-    <h2
-      data-site="restaurantName"
-    ></h2>
-
-
-    <p
-      data-site="address"
-    ></p>
-
-
-<p>
-  TEL：
-  <a
-    href="#"
-    data-phone
-  >
-    <span data-site="phone"></span>
-  </a>
-</p>
-
-
-    <p>
-      OPEN：
-      <span
-        data-site="openHours"
-      ></span>
-    </p>
-
-<p>
-  <span data-site="closedDay"></span>
-</p>
-
-<div class="map">
-
- <iframe
-  id="map"
-  width="100%"
-  height="400"
-  style="border:0;"
-  allowfullscreen=""
-  loading="lazy"
-></iframe>
-
-<a href="access.html" class="menu-more">
-  VIEW ACCESS
-</a>
-
-</div>
-
-
-  </section>
-
-
-
-  <!-- RESERVATION -->
-
-  <section
-    id="reservation"
-    class="reservation"
-  >
-
-    <p>
-      RESERVATION
-    </p>
-
-
-    <h2>
-      ご予約
-    </h2>
-
-
-    <a
-  href="#"
-  class="reservation-button large"
-  data-link="reservationUrl"
->
-  WEB RESERVATION
-</a>
-
-  </section>
-
-
-
-  <!-- FOOTER -->
-
-<footer>
-
-  <p data-site="restaurantName"></p>
-
-  <p data-site="address"></p>
-
-  <p>
-    TEL：
-    <a
-      href="#"
-      data-phone
-    >
-      <span data-site="phone"></span>
-    </a>
-  </p>
-
-  <p>
-    EMAIL：
-    <a
-      href="#"
-      data-email
-    >
-      <span data-site="email"></span>
-    </a>
-  </p>
-
-<p>
-  <a
-    href="#"
-    data-link="instagram"
-    target="_blank"
-  >
-    Instagram
-  </a>
-</p>
-
-  <p>
-    © 2026
-    <span data-site="restaurantName"></span>
-  </p>
-
-</footer>
-
-
-    <small>
-      © RESTAURANT
-    </small>
-
-  </footer>
-
-
-
-  <!-- JAVASCRIPT -->
-
-  <script src="config.js"></script>
 
   <script src="script.js"></script>
-
 
 </body>
 
