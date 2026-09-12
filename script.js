@@ -80,6 +80,26 @@ buttons.forEach(button => {
       theme.light
     );
 
+const samples =
+  document.querySelectorAll(".color-sample");
+
+const values = [
+  theme.bg,
+  theme.text,
+  theme.accent,
+  theme.light
+];
+
+samples.forEach((sample, index) => {
+
+  sample.querySelector("span").style.backgroundColor =
+    values[index];
+
+  sample.querySelector("small").textContent =
+    values[index].toUpperCase();
+
+});
+
   });
 
 });
