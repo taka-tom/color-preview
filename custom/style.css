@@ -26,6 +26,12 @@ body {
 ========================= */
 
 .color-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.color-selector {
   padding: 45px 20px;
   background: #ffffff;
 }
