@@ -582,3 +582,11 @@ footer {
   }
 
 }
+
+@media (max-width: 400px) {
+
+  .color-selector {
+    grid-template-columns: 1fr;
+  }
+
+}
