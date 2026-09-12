@@ -3,7 +3,7 @@
 ========================= */
 
 :root {
-  --bg-color: #FFFFFF;
+  --bg-color: #F7F5F0;
   --text-color: #333333;
   --accent-color: #8B6F47;
   --accent-light: #E8DFD2;
@@ -15,216 +15,350 @@
 
 body {
   margin: 0;
+
   font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    "Yu Gothic",
-    "Hiragino Kaku Gothic ProN",
-    Arial,
+    "Noto Sans JP",
     sans-serif;
 
-  background: #f5f5f5;
-  color: #333;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 
 /* =========================
-   カラー設定エリア
+   カラー指定エリア
 ========================= */
 
 .color-selector {
-  padding: 50px 20px;
+  padding: 40px 20px;
   text-align: center;
   background: #ffffff;
 }
 
 .color-selector h1 {
   margin: 0 0 10px;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .color-selector > p {
-  margin: 0 0 40px;
-  color: #666;
-}
-
-
-/* =========================
-   色を選ぶエリア
-========================= */
-
-.color-setting {
-  max-width: 700px;
-  margin: 0 auto 40px;
-  padding: 25px;
-  background: #fafafa;
-  border-radius: 12px;
-}
-
-.color-setting h2 {
-  margin: 0 0 20px;
-  font-size: 20px;
-}
-
-
-/* 色ボタン */
-
-.palette-row {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.palette-button {
-  width: 65px;
-  height: 65px;
-
-  border: 3px solid #ffffff;
-  border-radius: 50%;
-
-  cursor: pointer;
-
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.15);
-
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s;
-}
-
-.palette-button:hover {
-  transform: scale(1.08);
-}
-
-.palette-button.selected {
-  transform: scale(1.1);
-
-  box-shadow:
-    0 0 0 3px #333,
-    0 3px 10px rgba(0, 0, 0, 0.2);
-}
-
-
-/* 選択中の色 */
-
-.selected-color {
-  margin: 20px 0 0;
-  font-size: 14px;
-  color: #666;
-}
-
-.selected-color span {
-  font-weight: bold;
-  color: #333;
-}
-
-
-/* =========================
-   プレビュー
-========================= */
-
-.preview {
-  max-width: 1000px;
-  margin: 50px auto 0;
-
-  background: var(--bg-color);
-  color: var(--text-color);
-
-  box-shadow:
-    0 5px 25px rgba(0, 0, 0, 0.1);
-}
-
-
-/* ヘッダー */
-
-.preview header {
-  padding: 25px;
-  text-align: center;
-
-  background: var(--accent-color);
-  color: #ffffff;
-
-  font-size: 24px;
-  font-weight: bold;
-}
-
-
-/* ナビ */
-
-.preview nav {
-  padding: 15px;
-  text-align: center;
-
-  background: var(--accent-light);
-
-  font-size: 14px;
-}
-
-
-/* ヒーロー */
-
-.hero {
-  padding: 90px 20px;
-  text-align: center;
-
-  background: var(--bg-color);
-}
-
-.hero h2 {
-  margin: 0 0 15px;
-
-  font-size: 36px;
-  color: var(--text-color);
-}
-
-.hero p {
   margin-bottom: 30px;
 }
 
 
-/* ボタン */
+/* =========================
+   カラー入力
+========================= */
 
-.hero button {
-  padding: 12px 35px;
+.color-inputs {
+  max-width: 800px;
 
-  border: none;
-  border-radius: 4px;
+  margin: 0 auto;
 
-  background: var(--accent-color);
-  color: #ffffff;
+  display: grid;
 
-  font-size: 15px;
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.color-input {
+  text-align: left;
+}
+
+.color-input label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-weight: bold;
+}
+
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* カラーピッカー */
+
+.input-row input[type="color"] {
+  width: 55px;
+  height: 45px;
+
+  padding: 3px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 6px;
+
+  background: #fff;
+
   cursor: pointer;
 }
 
 
-/* コンテンツ */
+/* カラーコード */
 
-.content {
-  padding: 70px 20px;
+.input-row input[type="text"] {
+  flex: 1;
+
+  height: 45px;
+
+  padding: 0 12px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 6px;
+
+  font-size: 16px;
+
+  font-family: monospace;
+
+  color: #333;
+
+  background: #fff;
+}
+
+.input-row input[type="text"]:focus {
+  outline: none;
+
+  border-color: var(--accent-color);
+}
+
+
+/* =========================
+   色見本
+========================= */
+
+.color-preview {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  margin-top: 35px;
+
+  flex-wrap: wrap;
+}
+
+.color-sample {
+  width: 110px;
+
+  text-align: center;
+}
+
+.color-sample span {
+  display: block;
+
+  width: 80px;
+  height: 50px;
+
+  margin: 0 auto 10px;
+
+  border-radius: 6px;
+
+  border: 1px solid #ddd;
+}
+
+.color-sample p {
+  margin: 5px 0;
+
+  font-weight: bold;
+}
+
+.color-sample small {
+  color: #777;
+
+  font-family: monospace;
+}
+
+
+/* =========================
+   サイトプレビュー
+========================= */
+
+.preview {
+  background: var(--bg-color);
+
+  color: var(--text-color);
+}
+
+
+/* =========================
+   ヘッダー
+========================= */
+
+.site-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 20px 40px;
+
+  background: var(--bg-color);
+
+  border-bottom: 1px solid var(--accent-light);
+}
+
+.site-logo {
+  font-size: 20px;
+
+  font-weight: bold;
+}
+
+.site-header nav {
+  display: flex;
+
+  gap: 25px;
+}
+
+.site-header nav a {
+  color: var(--text-color);
+
+  text-decoration: none;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   メインビジュアル
+========================= */
+
+.hero {
+  min-height: 500px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    var(--accent-color);
+
+  color: #ffffff;
+}
+
+.hero-content {
+  padding: 40px 20px;
+}
+
+.hero-subtitle {
+  letter-spacing: 3px;
+
+  font-size: 13px;
+}
+
+.hero h2 {
+  font-size: 48px;
+
+  margin: 20px 0;
+}
+
+.hero p {
+  line-height: 1.8;
+}
+
+
+/* =========================
+   ボタン
+========================= */
+
+.button {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding: 14px 35px;
+
+  background: var(--accent-color);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border-radius: 3px;
+}
+
+
+/* =========================
+   コンテンツ
+========================= */
+
+.contents {
+  padding: 80px 20px;
+
   text-align: center;
 
   background: var(--bg-color);
 }
 
-.content h2 {
-  margin-bottom: 20px;
+.contents h2 {
+  color: var(--accent-color);
+
+  letter-spacing: 3px;
+}
+
+.contents > p {
+  line-height: 2;
 }
 
 
-/* フッター */
+/* =========================
+   カード
+========================= */
 
-.preview footer {
-  padding: 25px;
+.sample-cards {
+  max-width: 1000px;
+
+  margin: 50px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.card {
+  padding: 40px 20px;
+
+  background: var(--accent-light);
+
+  border-radius: 5px;
+}
+
+.card h3 {
+  color: var(--accent-color);
+}
+
+
+/* =========================
+   フッター
+========================= */
+
+footer {
+  padding: 30px;
 
   text-align: center;
 
   background: var(--accent-color);
-  color: #ffffff;
 
-  font-size: 13px;
+  color: #ffffff;
 }
 
 
@@ -232,35 +366,34 @@ body {
    スマホ
 ========================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-  .color-selector {
-    padding: 35px 15px;
+  .color-inputs {
+    grid-template-columns: 1fr;
   }
 
-  .color-selector h1 {
-    font-size: 24px;
+  .site-header {
+    padding: 20px;
+
+    flex-direction: column;
+
+    gap: 15px;
   }
 
-  .color-setting {
-    padding: 20px 15px;
-  }
-
-  .palette-button {
-    width: 55px;
-    height: 55px;
+  .site-header nav {
+    gap: 15px;
   }
 
   .hero {
-    padding: 60px 20px;
+    min-height: 400px;
   }
 
   .hero h2 {
-    font-size: 28px;
+    font-size: 36px;
   }
 
-  .preview nav {
-    font-size: 12px;
+  .sample-cards {
+    grid-template-columns: 1fr;
   }
 
 }
