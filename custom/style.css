@@ -29,10 +29,9 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-}
 
-.color-selector {
   padding: 45px 20px;
+
   background: #ffffff;
 }
 
@@ -54,9 +53,10 @@ body {
 ========================= */
 
 .color-control {
-  max-width: 700px;
-  margin: 0 auto 30px;
-  padding: 25px;
+  width: 100%;
+  margin: 0;
+
+  padding: 18px;
 
   background: #fafafa;
 
@@ -536,8 +536,16 @@ footer {
 
 @media (max-width: 700px) {
 
+
+
+  .color-selector {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 25px 12px;
+  }
+
   .color-control {
-    padding: 20px;
+    padding: 14px;
   }
 
   .color-picker-area {
