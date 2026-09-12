@@ -54,12 +54,23 @@ buttons.forEach(button => {
 
   button.addEventListener("click", () => {
 
+    // 選択中の表示
+    buttons.forEach(btn => {
+      btn.classList.remove("selected");
+    });
+
+    button.classList.add("selected");
+
+
+    // 選択したカラー
     const colorName =
       button.dataset.color;
 
     const theme =
       colorThemes[colorName];
 
+
+    // サイトカラーを変更
     document.documentElement.style.setProperty(
       "--bg-color",
       theme.bg
@@ -80,25 +91,27 @@ buttons.forEach(button => {
       theme.light
     );
 
-const samples =
-  document.querySelectorAll(".color-sample");
 
-const values = [
-  theme.bg,
-  theme.text,
-  theme.accent,
-  theme.light
-];
+    // 色見本を変更
+    const samples =
+      document.querySelectorAll(".color-sample");
 
-samples.forEach((sample, index) => {
+    const values = [
+      theme.bg,
+      theme.text,
+      theme.accent,
+      theme.light
+    ];
 
-  sample.querySelector("span").style.backgroundColor =
-    values[index];
+    samples.forEach((sample, index) => {
 
-  sample.querySelector("small").textContent =
-    values[index].toUpperCase();
+      sample.querySelector("span").style.backgroundColor =
+        values[index];
 
-});
+      sample.querySelector("small").textContent =
+        values[index].toUpperCase();
+
+    });
 
   });
 
