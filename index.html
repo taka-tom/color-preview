@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>RESTAURANT</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div
+      class="logo"
+      data-site="restaurantName"
+    ></div>
+
+
+    <nav>
+
+      <a href="#about">
+        ABOUT
+      </a>
+
+      <a href="menu.html">
+        MENU
+      </a>
+      
+      <a href="plan.html">
+        PLAN
+      </a>
+      
+      <a href="access.html">
+        ACCESS
+      </a>
+
+    </nav>
+<button
+  class="menu-toggle"
+  aria-label="メニューを開く"
+>
+
+  <span></span>
+
+  <span></span>
+
+  <span></span>
+
+</button>
+
+    <a
+      href="#reservation"
+      class="reservation-button"
+    >
+      RESERVATION
+    </a>
+
+  </header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <img
+  class="hero-image"
+  data-image="heroImage"
+  alt="RESTAURANT"
+>
+
+  <div class="hero-overlay"></div>
+
+
+  <div class="hero-content">
+
+    <p>
+      WELCOME TO
+    </p>
+
+
+    <h1
+      data-site="restaurantName"
+    ></h1>
+
+
+    <p
+      class="hero-catch"
+      data-site="catchCopy"
+    ></p>
+
+
+    <a
+      href="#reservation"
+      class="hero-button"
+    >
+      RESERVATION
+    </a>
+
+  </div>
+
+</section>
+
+
+
+  <!-- ABOUT -->
+
+  <section
+    id="about"
+    class="about"
+  >
+
+    <p class="section-subtitle">
+      ABOUT
+    </p>
+
+
+    <h2
+      data-site="restaurantName"
+    ></h2>
+
+
+    <p
+      class="about-text"
+      data-site="aboutText"
+    ></p>
+
+  </section>
+
+
+
+  <!-- MENU -->
+
+  <section
+    id="menu"
+    class="menu-section"
+  >
+
+    <p class="section-subtitle">
+      MENU
+    </p>
+
+
+    <h2>
+      MENU
+    </h2>
+
+
+    <div class="menu-grid">
+
+
+      <div class="menu-card">
+
+        <img
+            class="menu-image"
+            data-image="menuImage01"
+            alt="MENU 01"
+          >
+
+
+        <h3
+          data-site="menuName01"
+        ></h3>
+        
+        <p
+          data-site="menuDescription01"
+        ></p>
+        
+        <span
+          data-site="menuPrice01"
+        ></span>
+
+        <a href="menu.html#menu01" class="menu-more">
+          VIEW MENU
+        </a>
+
+      </div>
+
+
+
+      <div class="menu-card">
+
+      <img
+      class="menu-image"
+      data-image="menuImage02"
+      alt="MENU 02"
+    >
+
+
+       <!-- MENU 02 -->
+
+      <h3
+        data-site="menuName02"
+      ></h3>
+      
+      <p
+        data-site="menuDescription02"
+      ></p>
+      
+      <span
+        data-site="menuPrice02"
+      ></span>
+
+      <a href="menu.html#menu02" class="menu-more">
+        VIEW MENU
+      </a>
+
+      </div>
+
+
+
+      <div class="menu-card">
+
+<img
+  class="menu-image"
+  data-image="menuImage03"
+  alt="MENU 03"
+>
+
+
+        <!-- MENU 03 -->
+
+        <h3
+          data-site="menuName03"
+        ></h3>
+        
+        <p
+          data-site="menuDescription03"
+        ></p>
+        
+        <span
+          data-site="menuPrice03"
+        ></span>
+        
+        <a href="menu.html#menu03" class="menu-more">
+          VIEW MENU
+        </a>
+        
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+<!-- PLAN -->
+
+<section
+  id="plan"
+  class="plan-section"
+>
+
+  <p class="section-subtitle">
+    PLAN
+  </p>
+
+
+  <h2>
+    PLAN
+  </h2>
+
+
+  <div class="plan-grid">
+
+
+    <div class="plan-card">
+
+      <img class="plan-image"
+          data-image="planImage01"
+          alt="PLAN 01">
+
+
+        <h3 data-site="planName01"></h3>
+        <p data-site="planDescription01"></p>
+        <span data-site="planPrice01"></span>
+
+<a href="plan.html#plan01" class="menu-more">
+  VIEW PLAN
+</a>
+    
+
+    </div>
+
+
+
+    <div class="plan-card">
+
+      <img class="plan-image"
+          data-image="planImage02"
+          alt="PLAN 02">
+          
+          <h3 data-site="planName02"></h3>
+          <p data-site="planDescription02"></p>
+          <span data-site="planPrice02"></span>
+
+<a href="plan.html#plan02" class="menu-more">
+  VIEW PLAN
+</a>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+  <!-- ACCESS -->
+
+  <section
+    id="access"
+    class="access"
+  >
+
+    <p class="section-subtitle">
+      ACCESS
+    </p>
+
+
+    <h2
+      data-site="restaurantName"
+    ></h2>
+
+
+    <p
+      data-site="address"
+    ></p>
+
+
+<p>
+  TEL：
+  <a
+    href="#"
+    data-phone
+  >
+    <span data-site="phone"></span>
+  </a>
+</p>
+
+
+    <p>
+      OPEN：
+      <span
+        data-site="openHours"
+      ></span>
+    </p>
+
+<p>
+  <span data-site="closedDay"></span>
+</p>
+
+<div class="map">
+
+ <iframe
+  id="map"
+  width="100%"
+  height="400"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+></iframe>
+
+<a href="access.html" class="menu-more">
+  VIEW ACCESS
+</a>
+
+</div>
+
+
+  </section>
+
+
+
+  <!-- RESERVATION -->
+
+  <section
+    id="reservation"
+    class="reservation"
+  >
+
+    <p>
+      RESERVATION
+    </p>
+
+
+    <h2>
+      ご予約
+    </h2>
+
+
+    <a
+  href="#"
+  class="reservation-button large"
+  data-link="reservationUrl"
+>
+  WEB RESERVATION
+</a>
+
+  </section>
+
+
+
+  <!-- FOOTER -->
+
+<footer>
+
+  <p data-site="restaurantName"></p>
+
+  <p data-site="address"></p>
+
+  <p>
+    TEL：
+    <a
+      href="#"
+      data-phone
+    >
+      <span data-site="phone"></span>
+    </a>
+  </p>
+
+  <p>
+    EMAIL：
+    <a
+      href="#"
+      data-email
+    >
+      <span data-site="email"></span>
+    </a>
+  </p>
+
+<p>
+  <a
+    href="#"
+    data-link="instagram"
+    target="_blank"
+  >
+    Instagram
+  </a>
+</p>
+
+  <p>
+    © 2026
+    <span data-site="restaurantName"></span>
+  </p>
+
+</footer>
+
+
+    <small>
+      © RESTAURANT
+    </small>
+
+  </footer>
+
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="config.js"></script>
+
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
