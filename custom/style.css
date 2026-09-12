@@ -15,11 +15,7 @@
 
 body {
   margin: 0;
-
-  font-family:
-    "Noto Sans JP",
-    sans-serif;
-
+  font-family: "Noto Sans JP", sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
 }
@@ -31,77 +27,239 @@ body {
 
 .color-selector {
   padding: 45px 20px;
-  text-align: center;
   background: #ffffff;
 }
 
 .color-selector h1 {
   margin: 0 0 10px;
+  text-align: center;
   font-size: 26px;
 }
 
 .color-selector > p {
   margin: 0 0 35px;
+  text-align: center;
   color: #666;
 }
 
 
 /* =========================
-   4色入力
+   カラーコントロール
 ========================= */
 
-.color-inputs {
-  max-width: 850px;
-
-  margin: 0 auto;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, 1fr);
-
-  gap: 20px;
-}
-
-.color-input {
-  padding: 20px;
-
-  text-align: left;
+.color-control {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  padding: 25px;
 
   background: #fafafa;
 
   border: 1px solid #e5e5e5;
-
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
-.color-input label {
-  display: block;
-
-  margin-bottom: 10px;
-
-  font-weight: bold;
-
-  font-size: 15px;
+.color-control h2 {
+  margin: 0 0 18px;
+  font-size: 18px;
 }
 
 
 /* =========================
-   カラー入力欄
+   カラー選択エリア
 ========================= */
 
-.input-row {
+.color-picker-area {
+  display: grid;
+
+  grid-template-columns: 1fr 24px;
+
+  gap: 12px;
+}
+
+
+/* =========================
+   グリッド
+========================= */
+
+.color-grid {
+  position: relative;
+
+  height: 220px;
+
+  border-radius: 8px;
+
+  cursor: crosshair;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      to right,
+      #fff,
+      transparent
+    ),
+    linear-gradient(
+      to top,
+      #000,
+      transparent
+    ),
+    hsl(30, 100%, 50%);
+}
+
+
+/* グリッドカーソル */
+
+.color-grid-cursor {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  border: 2px solid #fff;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.5);
+
+  transform:
+    translate(-50%, -50%);
+
+  pointer-events: none;
+
+  left: 50%;
+  top: 50%;
+}
+
+
+/* =========================
+   スペクトラム
+========================= */
+
+.hue-spectrum {
+  position: relative;
+
+  height: 220px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #ff0000 0%,
+      #ffff00 17%,
+      #00ff00 33%,
+      #00ffff 50%,
+      #0000ff 67%,
+      #ff00ff 83%,
+      #ff0000 100%
+    );
+}
+
+
+/* スペクトラムカーソル */
+
+.hue-cursor {
+  position: absolute;
+
+  left: 50%;
+
+  width: 30px;
+  height: 5px;
+
+  border: 2px solid #fff;
+
+  border-radius: 5px;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.6);
+
+  transform:
+    translate(-50%, -50%);
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   明るさスライダー
+========================= */
+
+.lightness-slider {
+  margin-top: 15px;
+}
+
+.lightness-slider input {
+  width: 100%;
+
+  height: 8px;
+
+  appearance: none;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      to right,
+      #000,
+      #fff
+    );
+}
+
+
+/* Chrome / Safari */
+
+.lightness-slider input::-webkit-slider-thumb {
+  appearance: none;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  border: 2px solid #333;
+
+  cursor: pointer;
+}
+
+
+/* Firefox */
+
+.lightness-slider input::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  border: 2px solid #333;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   カラーコード
+========================= */
+
+.color-code-row {
   display: flex;
 
   align-items: center;
 
   gap: 10px;
+
+  margin-top: 18px;
 }
 
-
-/* カラーピッカー */
-
-.input-row input[type="color"] {
+.color-code-row input[type="color"] {
   width: 55px;
   height: 45px;
 
@@ -116,10 +274,7 @@ body {
   cursor: pointer;
 }
 
-
-/* HEXコード */
-
-.input-row input[type="text"] {
+.color-code-row input[type="text"] {
   flex: 1;
 
   height: 45px;
@@ -137,72 +292,54 @@ body {
   font-size: 16px;
 
   font-family: monospace;
-
-  transition: 0.2s;
 }
 
-.input-row input[type="text"]:focus {
+.color-code-row input[type="text"]:focus {
   outline: none;
 
   border-color: var(--accent-color);
-
-  box-shadow:
-    0 0 0 3px
-    rgba(139, 111, 71, 0.12);
 }
 
 
 /* =========================
-   色見本
+   色結果
 ========================= */
 
-.color-preview {
+.color-result {
   display: flex;
 
-  justify-content: center;
+  align-items: center;
 
-  gap: 25px;
+  gap: 12px;
 
-  margin-top: 35px;
-
-  flex-wrap: wrap;
+  margin-top: 15px;
 }
 
-.color-sample {
-  width: 120px;
-
-  text-align: center;
-}
-
-.color-sample span {
+.color-result > span {
   display: block;
 
-  width: 85px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
 
-  margin: 0 auto 10px;
-
-  border-radius: 7px;
+  border-radius: 6px;
 
   border: 1px solid #ddd;
-
-  transition: 0.2s;
 }
 
-.color-sample p {
-  margin: 5px 0;
-
-  font-weight: bold;
+.color-result strong {
+  display: block;
 
   font-size: 14px;
 }
 
-.color-sample small {
+.color-result small {
+  display: block;
+
+  margin-top: 3px;
+
   color: #777;
 
   font-family: monospace;
-
-  font-size: 12px;
 }
 
 
@@ -212,7 +349,6 @@ body {
 
 .preview {
   background: var(--bg-color);
-
   color: var(--text-color);
 }
 
@@ -238,13 +374,11 @@ body {
 
 .site-logo {
   font-size: 20px;
-
   font-weight: bold;
 }
 
 .site-header nav {
   display: flex;
-
   gap: 25px;
 }
 
@@ -269,3 +403,168 @@ body {
   justify-content: center;
 
   align-items: center;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    var(--accent-color);
+
+  color: #ffffff;
+}
+
+.hero-content {
+  padding: 40px 20px;
+}
+
+.hero-subtitle {
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+.hero p {
+  line-height: 1.8;
+}
+
+
+/* =========================
+   ボタン
+========================= */
+
+.button {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding: 14px 35px;
+
+  background: var(--accent-color);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border-radius: 3px;
+}
+
+
+/* =========================
+   コンテンツ
+========================= */
+
+.contents {
+  padding: 80px 20px;
+
+  text-align: center;
+
+  background: var(--bg-color);
+}
+
+.contents h2 {
+  color: var(--accent-color);
+
+  letter-spacing: 3px;
+}
+
+.contents > p {
+  line-height: 2;
+}
+
+
+/* =========================
+   カード
+========================= */
+
+.sample-cards {
+  max-width: 1000px;
+
+  margin: 50px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.card {
+  padding: 40px 20px;
+
+  background: var(--accent-light);
+
+  border-radius: 5px;
+}
+
+.card h3 {
+  color: var(--accent-color);
+}
+
+
+/* =========================
+   フッター
+========================= */
+
+footer {
+  padding: 30px;
+
+  text-align: center;
+
+  background: var(--accent-color);
+
+  color: #ffffff;
+}
+
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 700px) {
+
+  .color-control {
+    padding: 20px;
+  }
+
+  .color-picker-area {
+    grid-template-columns: 1fr 20px;
+  }
+
+  .color-grid,
+  .hue-spectrum {
+    height: 180px;
+  }
+
+  .site-header {
+    padding: 20px;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .site-header nav {
+    gap: 15px;
+  }
+
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero h2 {
+    font-size: 36px;
+  }
+
+  .sample-cards {
+    grid-template-columns: 1fr;
+  }
+
+}
