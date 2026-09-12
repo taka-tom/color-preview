@@ -12,131 +12,283 @@
 
 <body>
 
-  <!-- カラー指定エリア -->
+
+  <!-- =========================
+       カラー指定エリア
+  ========================== -->
+
   <section class="color-selector">
 
     <h1>サイトカラーを指定</h1>
 
     <p>4つのカラーを指定してください</p>
 
-    <div class="color-inputs">
 
-      <div class="color-input">
-        <label for="bgColor">背景</label>
+    <!-- =========================
+         背景カラー
+    ========================== -->
 
-        <div class="input-row">
+    <div class="color-control">
+
+      <h2>背景</h2>
+
+      <div class="color-picker-area">
+
+        <div class="color-grid" id="bgGrid">
+          <div class="color-grid-cursor"></div>
+        </div>
+
+        <div class="hue-spectrum" id="bgHue">
+          <div class="hue-cursor"></div>
+        </div>
+
+        <div class="lightness-slider">
           <input
-            type="color"
-            id="bgColorPicker"
-            value="#F7F5F0"
-          >
-
-          <input
-            type="text"
-            id="bgColor"
-            value="#F7F5F0"
-            maxlength="7"
+            type="range"
+            id="bgLightness"
+            min="0"
+            max="100"
+            value="95"
           >
         </div>
+
       </div>
 
 
-      <div class="color-input">
-        <label for="textColor">文字</label>
+      <div class="color-code-row">
 
-        <div class="input-row">
-          <input
-            type="color"
-            id="textColorPicker"
-            value="#333333"
-          >
+        <input
+          type="color"
+          id="bgColorPicker"
+          value="#F7F5F0"
+        >
 
-          <input
-            type="text"
-            id="textColor"
-            value="#333333"
-            maxlength="7"
-          >
-        </div>
+        <input
+          type="text"
+          id="bgColor"
+          value="#F7F5F0"
+          maxlength="7"
+        >
+
       </div>
 
 
-      <div class="color-input">
-        <label for="accentColor">アクセント</label>
+      <div class="color-result">
 
-        <div class="input-row">
-          <input
-            type="color"
-            id="accentColorPicker"
-            value="#8B6F47"
-          >
-
-          <input
-            type="text"
-            id="accentColor"
-            value="#8B6F47"
-            maxlength="7"
-          >
-        </div>
-      </div>
-
-
-      <div class="color-input">
-        <label for="subColor">サブ</label>
-
-        <div class="input-row">
-          <input
-            type="color"
-            id="subColorPicker"
-            value="#E8DFD2"
-          >
-
-          <input
-            type="text"
-            id="subColor"
-            value="#E8DFD2"
-            maxlength="7"
-          >
-        </div>
-      </div>
-
-    </div>
-
-
-    <!-- 色見本 -->
-    <div class="color-preview">
-
-      <div class="color-sample">
         <span id="bgSample"></span>
-        <p>背景</p>
-        <small id="bgCode">#F7F5F0</small>
-      </div>
 
-      <div class="color-sample">
-        <span id="textSample"></span>
-        <p>文字</p>
-        <small id="textCode">#333333</small>
-      </div>
+        <div>
+          <strong>背景</strong>
+          <small id="bgCode">#F7F5F0</small>
+        </div>
 
-      <div class="color-sample">
-        <span id="accentSample"></span>
-        <p>アクセント</p>
-        <small id="accentCode">#8B6F47</small>
-      </div>
-
-      <div class="color-sample">
-        <span id="subSample"></span>
-        <p>サブ</p>
-        <small id="subCode">#E8DFD2</small>
       </div>
 
     </div>
+
+
+
+    <!-- =========================
+         文字カラー
+    ========================== -->
+
+    <div class="color-control">
+
+      <h2>文字</h2>
+
+      <div class="color-picker-area">
+
+        <div class="color-grid" id="textGrid">
+          <div class="color-grid-cursor"></div>
+        </div>
+
+        <div class="hue-spectrum" id="textHue">
+          <div class="hue-cursor"></div>
+        </div>
+
+        <div class="lightness-slider">
+          <input
+            type="range"
+            id="textLightness"
+            min="0"
+            max="100"
+            value="20"
+          >
+        </div>
+
+      </div>
+
+
+      <div class="color-code-row">
+
+        <input
+          type="color"
+          id="textColorPicker"
+          value="#333333"
+        >
+
+        <input
+          type="text"
+          id="textColor"
+          value="#333333"
+          maxlength="7"
+        >
+
+      </div>
+
+
+      <div class="color-result">
+
+        <span id="textSample"></span>
+
+        <div>
+          <strong>文字</strong>
+          <small id="textCode">#333333</small>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         アクセントカラー
+    ========================== -->
+
+    <div class="color-control">
+
+      <h2>アクセント</h2>
+
+      <div class="color-picker-area">
+
+        <div class="color-grid" id="accentGrid">
+          <div class="color-grid-cursor"></div>
+        </div>
+
+        <div class="hue-spectrum" id="accentHue">
+          <div class="hue-cursor"></div>
+        </div>
+
+        <div class="lightness-slider">
+          <input
+            type="range"
+            id="accentLightness"
+            min="0"
+            max="100"
+            value="40"
+          >
+        </div>
+
+      </div>
+
+
+      <div class="color-code-row">
+
+        <input
+          type="color"
+          id="accentColorPicker"
+          value="#8B6F47"
+        >
+
+        <input
+          type="text"
+          id="accentColor"
+          value="#8B6F47"
+          maxlength="7"
+        >
+
+      </div>
+
+
+      <div class="color-result">
+
+        <span id="accentSample"></span>
+
+        <div>
+          <strong>アクセント</strong>
+          <small id="accentCode">#8B6F47</small>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         サブカラー
+    ========================== -->
+
+    <div class="color-control">
+
+      <h2>サブ</h2>
+
+      <div class="color-picker-area">
+
+        <div class="color-grid" id="subGrid">
+          <div class="color-grid-cursor"></div>
+        </div>
+
+        <div class="hue-spectrum" id="subHue">
+          <div class="hue-cursor"></div>
+        </div>
+
+        <div class="lightness-slider">
+          <input
+            type="range"
+            id="subLightness"
+            min="0"
+            max="100"
+            value="88"
+          >
+        </div>
+
+      </div>
+
+
+      <div class="color-code-row">
+
+        <input
+          type="color"
+          id="subColorPicker"
+          value="#E8DFD2"
+        >
+
+        <input
+          type="text"
+          id="subColor"
+          value="#E8DFD2"
+          maxlength="7"
+        >
+
+      </div>
+
+
+      <div class="color-result">
+
+        <span id="subSample"></span>
+
+        <div>
+          <strong>サブ</strong>
+          <small id="subCode">#E8DFD2</small>
+        </div>
+
+      </div>
+
+    </div>
+
 
   </section>
 
 
-  <!-- サイトプレビュー -->
+
+  <!-- =========================
+       サイトプレビュー
+  ========================== -->
+
   <main class="preview">
+
 
     <header class="site-header">
 
@@ -152,6 +304,7 @@
       </nav>
 
     </header>
+
 
 
     <section class="hero">
@@ -180,6 +333,7 @@
     </section>
 
 
+
     <section class="contents">
 
       <h2>ABOUT</h2>
@@ -193,18 +347,35 @@
       <div class="sample-cards">
 
         <div class="card">
+
           <h3>MENU</h3>
-          <p>おすすめメニュー</p>
+
+          <p>
+            おすすめメニュー
+          </p>
+
         </div>
 
+
         <div class="card">
+
           <h3>CONCEPT</h3>
-          <p>お店のコンセプト</p>
+
+          <p>
+            お店のコンセプト
+          </p>
+
         </div>
 
+
         <div class="card">
+
           <h3>ACCESS</h3>
-          <p>店舗へのアクセス</p>
+
+          <p>
+            店舗へのアクセス
+          </p>
+
         </div>
 
       </div>
@@ -212,11 +383,18 @@
     </section>
 
 
+
     <footer>
-      <p>YOUR SHOP</p>
+
+      <p>
+        YOUR SHOP
+      </p>
+
     </footer>
 
+
   </main>
+
 
 
   <script src="script.js"></script>
