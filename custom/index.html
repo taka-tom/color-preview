@@ -2,136 +2,221 @@
 <html lang="ja">
 
 <head>
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
-  <title>サイトカラーを設定</title>
+  <title>カラー指定プレビュー</title>
 
   <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
-
-  <!-- カラー設定 -->
-
+  <!-- カラー指定エリア -->
   <section class="color-selector">
 
-    <h1>サイトカラーを設定</h1>
+    <h1>サイトカラーを指定</h1>
 
-    <p>
-      背景・文字・メイン・サブの色を
-      自由に選んでください
-    </p>
+    <p>4つのカラーを指定してください</p>
 
+    <div class="color-inputs">
 
-    <!-- 背景 -->
+      <div class="color-input">
+        <label for="bgColor">背景</label>
 
-    <div class="color-setting">
+        <div class="input-row">
+          <input
+            type="color"
+            id="bgColorPicker"
+            value="#F7F5F0"
+          >
 
-      <h2>背景</h2>
-
-      <div class="palette-row">
-
-        <button
-          class="palette-button selected"
-          data-color="#FFFFFF"
-          style="background:#FFFFFF;">
-        </button>
-
-        <button
-          class="palette-button"
-          data-color="#F7F5F0"
-          style="background:#F7F5F0;">
-        </button>
-
-        <button
-          class="palette-button"
-          data-color="#F4F1EA"
-          style="background:#F4F1EA;">
-        </button>
-
-        <button
-          class="palette-button"
-          data-color="#FFF7EF"
-          style="background:#FFF7EF;">
-        </button>
-
-        <button
-          class="palette-button"
-          data-color="#F4F9F8"
-          style="background:#F4F9F8;">
-        </button>
-
-        <button
-          class="palette-button"
-          data-color="#F4F4F4"
-          style="background:#F4F4F4;">
-        </button>
-
+          <input
+            type="text"
+            id="bgColor"
+            value="#F7F5F0"
+            maxlength="7"
+          >
+        </div>
       </div>
 
-      <p class="selected-color">
-        選択中：
-        <span id="bg-value">#FFFFFF</span>
-      </p>
+
+      <div class="color-input">
+        <label for="textColor">文字</label>
+
+        <div class="input-row">
+          <input
+            type="color"
+            id="textColorPicker"
+            value="#333333"
+          >
+
+          <input
+            type="text"
+            id="textColor"
+            value="#333333"
+            maxlength="7"
+          >
+        </div>
+      </div>
+
+
+      <div class="color-input">
+        <label for="accentColor">アクセント</label>
+
+        <div class="input-row">
+          <input
+            type="color"
+            id="accentColorPicker"
+            value="#8B6F47"
+          >
+
+          <input
+            type="text"
+            id="accentColor"
+            value="#8B6F47"
+            maxlength="7"
+          >
+        </div>
+      </div>
+
+
+      <div class="color-input">
+        <label for="subColor">サブ</label>
+
+        <div class="input-row">
+          <input
+            type="color"
+            id="subColorPicker"
+            value="#E8DFD2"
+          >
+
+          <input
+            type="text"
+            id="subColor"
+            value="#E8DFD2"
+            maxlength="7"
+          >
+        </div>
+      </div>
 
     </div>
 
 
-    <!-- プレビュー -->
+    <!-- 色見本 -->
+    <div class="color-preview">
 
-    <div class="preview">
+      <div class="color-sample">
+        <span id="bgSample"></span>
+        <p>背景</p>
+        <small id="bgCode">#F7F5F0</small>
+      </div>
 
-      <header>
+      <div class="color-sample">
+        <span id="textSample"></span>
+        <p>文字</p>
+        <small id="textCode">#333333</small>
+      </div>
+
+      <div class="color-sample">
+        <span id="accentSample"></span>
+        <p>アクセント</p>
+        <small id="accentCode">#8B6F47</small>
+      </div>
+
+      <div class="color-sample">
+        <span id="subSample"></span>
+        <p>サブ</p>
+        <small id="subCode">#E8DFD2</small>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- サイトプレビュー -->
+  <main class="preview">
+
+    <header class="site-header">
+
+      <div class="site-logo">
         YOUR SHOP
-      </header>
+      </div>
 
       <nav>
-        HOME　 ABOUT　 MENU　 ACCESS
+        <a href="#">HOME</a>
+        <a href="#">MENU</a>
+        <a href="#">ABOUT</a>
+        <a href="#">ACCESS</a>
       </nav>
 
-      <section class="hero">
+    </header>
+
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <p class="hero-subtitle">
+          WELCOME TO OUR WEBSITE
+        </p>
 
         <h2>
           YOUR SHOP
         </h2>
 
         <p>
-          心地よい時間を過ごせる場所
+          あなたのお店の魅力を伝える<br>
+          シンプルで美しいウェブサイト
         </p>
 
-        <button>
+        <a href="#" class="button">
           MENU
-        </button>
+        </a>
 
-      </section>
+      </div>
 
-
-      <section class="content">
-
-        <h2>ABOUT</h2>
-
-        <p>
-          お店の紹介文がここに入ります。
-        </p>
-
-      </section>
+    </section>
 
 
-      <footer>
-        © YOUR SHOP
-      </footer>
+    <section class="contents">
 
-    </div>
+      <h2>ABOUT</h2>
 
-  </section>
+      <p>
+        お店のこだわりや想いなどを<br>
+        ここに掲載できます。
+      </p>
+
+
+      <div class="sample-cards">
+
+        <div class="card">
+          <h3>MENU</h3>
+          <p>おすすめメニュー</p>
+        </div>
+
+        <div class="card">
+          <h3>CONCEPT</h3>
+          <p>お店のコンセプト</p>
+        </div>
+
+        <div class="card">
+          <h3>ACCESS</h3>
+          <p>店舗へのアクセス</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <footer>
+      <p>YOUR SHOP</p>
+    </footer>
+
+  </main>
 
 
   <script src="script.js"></script>
