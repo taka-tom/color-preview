@@ -313,3 +313,16 @@ footer {
   color: #777;
 }
 
+/* 選択中のカラー */
+
+.color-buttons button.selected {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.color-buttons button.selected::before {
+  content: "✓ ";
+}
