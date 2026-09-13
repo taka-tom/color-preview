@@ -13,8 +13,15 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
   font-family: "Noto Sans JP", sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
@@ -22,29 +29,41 @@ body {
 
 
 /* =========================
-   カラー指定エリア
+   カラー設定エリア
 ========================= */
 
-.color-selector {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-
+.color-settings {
+  width: 100%;
   padding: 45px 20px;
-
   background: #ffffff;
 }
 
-.color-selector h1 {
+.color-settings h1 {
   margin: 0 0 10px;
   text-align: center;
   font-size: 26px;
 }
 
-.color-selector > p {
+.color-settings > p {
   margin: 0 0 35px;
   text-align: center;
   color: #666;
+}
+
+
+/* =========================
+   4色選択エリア
+========================= */
+
+.color-selector {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
 }
 
 
@@ -54,14 +73,17 @@ body {
 
 .color-control {
   width: 100%;
-  margin: 0;
+  min-width: 0;
 
+  margin: 0;
   padding: 18px;
 
   background: #fafafa;
 
   border: 1px solid #e5e5e5;
   border-radius: 12px;
+
+  overflow: hidden;
 }
 
 .color-control h2 {
@@ -77,9 +99,14 @@ body {
 .color-picker-area {
   display: grid;
 
-  grid-template-columns: 1fr 24px;
+  grid-template-columns:
+    minmax(0, 1fr)
+    18px;
 
-  gap: 12px;
+  gap: 8px;
+
+  width: 100%;
+  min-width: 0;
 }
 
 
@@ -90,13 +117,17 @@ body {
 .color-grid {
   position: relative;
 
-  height: 220px;
+  width: 100%;
+  min-width: 0;
+  height: 180px;
 
   border-radius: 8px;
 
   cursor: crosshair;
 
   overflow: hidden;
+
+  touch-action: none;
 
   background:
     linear-gradient(
@@ -113,13 +144,15 @@ body {
 }
 
 
-/* グリッドカーソル */
+/* =========================
+   グリッドカーソル
+========================= */
 
 .color-grid-cursor {
   position: absolute;
 
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 
   border: 2px solid #fff;
 
@@ -145,11 +178,14 @@ body {
 .hue-spectrum {
   position: relative;
 
-  height: 220px;
+  width: 18px;
+  height: 180px;
 
   border-radius: 8px;
 
   cursor: pointer;
+
+  touch-action: none;
 
   background:
     linear-gradient(
@@ -165,14 +201,16 @@ body {
 }
 
 
-/* スペクトラムカーソル */
+/* =========================
+   スペクトラムカーソル
+========================= */
 
 .hue-cursor {
   position: absolute;
 
   left: 50%;
 
-  width: 30px;
+  width: 26px;
   height: 5px;
 
   border: 2px solid #fff;
@@ -194,12 +232,17 @@ body {
 ========================= */
 
 .lightness-slider {
-  margin-top: 15px;
+  grid-column: 1 / -1;
+
+  width: 100%;
+
+  margin-top: 4px;
 }
 
 .lightness-slider input {
-  width: 100%;
+  display: block;
 
+  width: 100%;
   height: 8px;
 
   appearance: none;
@@ -217,13 +260,15 @@ body {
 }
 
 
-/* Chrome / Safari */
+/* =========================
+   Chrome / Safari
+========================= */
 
 .lightness-slider input::-webkit-slider-thumb {
   appearance: none;
 
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 
   border-radius: 50%;
 
@@ -235,11 +280,13 @@ body {
 }
 
 
-/* Firefox */
+/* =========================
+   Firefox
+========================= */
 
 .lightness-slider input::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 
   border-radius: 50%;
 
@@ -260,14 +307,20 @@ body {
 
   align-items: center;
 
-  gap: 10px;
+  gap: 8px;
 
-  margin-top: 18px;
+  width: 100%;
+
+  margin-top: 15px;
+
+  min-width: 0;
 }
 
 .color-code-row input[type="color"] {
-  width: 55px;
-  height: 45px;
+  flex: 0 0 48px;
+
+  width: 48px;
+  height: 42px;
 
   padding: 3px;
 
@@ -282,10 +335,12 @@ body {
 
 .color-code-row input[type="text"] {
   flex: 1;
+  min-width: 0;
 
-  height: 45px;
+  width: 100%;
+  height: 42px;
 
-  padding: 0 13px;
+  padding: 0 10px;
 
   border: 1px solid #d8d8d8;
 
@@ -295,7 +350,7 @@ body {
 
   color: #333;
 
-  font-size: 16px;
+  font-size: 14px;
 
   font-family: monospace;
 }
@@ -316,16 +371,20 @@ body {
 
   align-items: center;
 
-  gap: 12px;
+  gap: 10px;
 
-  margin-top: 15px;
+  width: 100%;
+
+  margin-top: 14px;
 }
 
 .color-result > span {
   display: block;
 
-  width: 45px;
-  height: 45px;
+  flex: 0 0 40px;
+
+  width: 40px;
+  height: 40px;
 
   border-radius: 6px;
 
@@ -335,7 +394,7 @@ body {
 .color-result strong {
   display: block;
 
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .color-result small {
@@ -346,6 +405,8 @@ body {
   color: #777;
 
   font-family: monospace;
+
+  font-size: 12px;
 }
 
 
@@ -531,31 +592,104 @@ footer {
 
 
 /* =========================
-   スマホ
+   タブレット・スマホ
 ========================= */
 
 @media (max-width: 700px) {
 
+  .color-settings {
+    padding: 30px 12px;
+  }
 
+  .color-settings h1 {
+    font-size: 23px;
+  }
+
+  .color-settings > p {
+    margin-bottom: 25px;
+  }
+
+
+  /* 2カラム */
 
   .color-selector {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
     gap: 12px;
-    padding: 25px 12px;
   }
+
+
+  /* カード */
 
   .color-control {
     padding: 14px;
   }
 
+  .color-control h2 {
+    font-size: 16px;
+
+    margin-bottom: 14px;
+  }
+
+
+  /* カラーピッカー */
+
   .color-picker-area {
-    grid-template-columns: 1fr 20px;
+    grid-template-columns:
+      minmax(0, 1fr)
+      16px;
+
+    gap: 6px;
   }
 
   .color-grid,
   .hue-spectrum {
-    height: 180px;
+    height: 150px;
   }
+
+  .hue-spectrum {
+    width: 16px;
+  }
+
+
+  /* カラーコード */
+
+  .color-code-row {
+    gap: 6px;
+  }
+
+  .color-code-row input[type="color"] {
+    flex-basis: 42px;
+
+    width: 42px;
+    height: 40px;
+  }
+
+  .color-code-row input[type="text"] {
+    height: 40px;
+
+    padding: 0 8px;
+
+    font-size: 13px;
+  }
+
+
+  /* 結果 */
+
+  .color-result {
+    gap: 8px;
+  }
+
+  .color-result > span {
+    flex-basis: 36px;
+
+    width: 36px;
+    height: 36px;
+  }
+
+
+  /* ヘッダー */
 
   .site-header {
     padding: 20px;
@@ -569,6 +703,9 @@ footer {
     gap: 15px;
   }
 
+
+  /* ヒーロー */
+
   .hero {
     min-height: 400px;
   }
@@ -577,11 +714,19 @@ footer {
     font-size: 36px;
   }
 
+
+  /* カード */
+
   .sample-cards {
     grid-template-columns: 1fr;
   }
 
 }
+
+
+/* =========================
+   小さいスマホ
+========================= */
 
 @media (max-width: 400px) {
 
